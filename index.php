@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-if ((isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['imei'])) && ($_POST['imei'] != '') && (isset($_POST['tipo_celular'])) && ($_POST['tipo_celular'] != '') ) {
+if ((isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['imei'])) && ($_POST['imei'] != '') && (isset($_POST['tipo_celular'])) && ($_POST['tipo_celular'] != '')) {
 
     include "model/model.php";
     $nuevo = new Usuario();
@@ -11,6 +11,8 @@ if ((isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['
     <head>
         <meta charset="UTF-8">
         <title>Examen practico</title>
+        
+    </head>
         
     </head>
     <body>
@@ -25,7 +27,7 @@ if ((isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['
 
                     <form action="#" method="post">
                         <h3>Nuevo Usuario</h3>                
-                        Telefono: <input type="text" name="telefoo"/>    
+                        Telefono: <input type="text" name="telefono"/>    
                         Nombre: <input type="text" name="nombre" /> 
                         imei: <input type="text" name="imei"/> 
                         Tipo telefono: <input type="text" name="tipo_celular"/>    
@@ -34,6 +36,7 @@ if ((isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['
                     </form>
                 </div>
                 <div>
+                    
                     <hr/>
                     <h3>Listado de usuarios</h3>
                     <a href="controller/controller.php"><i></i> Acceder al listado de usuarios</a>

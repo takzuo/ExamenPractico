@@ -19,6 +19,7 @@ class Usuario {
         self::setNames();
         $sql = "SELECT telefono, nombre, imei, tipo_celular FROM registrar_usuario";
         foreach ($this->db->query($sql) as $res) {
+            echo json_encode($res);
             $this->usuario[] = $res;
         }
         return $this->usuario;
@@ -28,10 +29,11 @@ class Usuario {
     public function setUsuario($telefono, $nombre, $imei, $tipo_celular) {
 
         self::setNames();
-        $sql = "INSERT INTO registrar_usuario(telefono, nombre, imei, tipo_celular) VALUES ('" . $telefono . "', '" . $nombre . "', '" . $imei . "', '" . $tipo_celular . "')";
+        //$sql = "INSERT INTO registrar_usuario (telefono, nombre, imei, tipo_celular) VALUES ($telefono,  $nombre, $imei, $tipo_celular)";
+        $sql = "INSERT INTO registrar_usuario (telefono, nombre, imei, tipo_celular) VALUES ('" . $telefono . "', '" . $nombre . "', '" . $imei . "', '" . $tipo_celular . "')";
         $result = $this->db->query($sql);
 
-        if ($result) {
+        if ($result) {  
             return true;
         } else {
             return false;
