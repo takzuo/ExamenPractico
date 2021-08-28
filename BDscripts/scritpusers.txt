@@ -1,0 +1,1 @@
+INSERT INTO `registrar_usuario` (`telefono`, `nombre`, `imei`, `tipo_celular`, `fecha`) VALUES ('3206060008', 'julian arango', '34635467591234', 'Samsun S1', current_timestamp()), ('3115948753', 'Natalia Arango', '28374657483948', 'Xiaomi MI', current_timestamp());
